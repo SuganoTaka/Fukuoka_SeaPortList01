@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101819">
+  <title>福岡 漁港と釣りの地図</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-icon">⚓</span><div><strong>福岡の釣り場</strong><small>FUKUOKA FIELD MAP</small></div></div>
+    <div class="topbar-center"><i></i> 福岡県 <span>/</span> フィッシングコンディション</div>
+    <div class="topbar-actions"><span id="total-count">漁港を読み込み中</span><button id="open-list" class="mobile-menu" aria-label="漁港一覧を開く" aria-expanded="false">☰</button></div>
+  </header>
+  <main>
+    <aside class="sidebar" id="sidebar" aria-label="漁港一覧">
+      <div class="side-heading"><div><span class="eyebrow">DISCOVER</span><h1>釣り場を探す</h1></div><button id="close-list" class="close-mobile" aria-label="漁港一覧を閉じる">×</button></div>
+      <div class="search"><label class="sr-only" for="search">漁港を探す</label><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="漁港名で検索" autocomplete="off"></div>
+      <div class="region-heading"><span>エリア</span><span id="count"></span></div>
+      <div class="area-filter" role="group" aria-label="海域で絞り込み">
+        <button data-area="" class="area-active" aria-pressed="true">すべて</button><button data-area="筑前海" aria-pressed="false">筑前海</button><button data-area="豊前海" aria-pressed="false">豊前海</button><button data-area="有明海" aria-pressed="false">有明海</button>
+      </div>
+      <div class="list-head"><span>漁港一覧</span><span>エリア順</span></div>
+      <div id="port-list" class="port-list"></div>
+      <div class="sidebar-foot"><i></i> 座標・釣り情報は参考情報です</div>
+    </aside>
+    <section class="map-area" aria-label="福岡の漁港マップ">
+      <div id="map"></div>
+      <div class="map-topline"><div><span class="eyebrow">FIELD OVERVIEW</span><h2>福岡 <span>漁港マップ</span></h2></div><button id="map-route" class="map-control">◎ 現在地・ルート</button></div>
+      <div id="map-message" class="map-message" role="status" hidden></div>
+      <div id="map-callout" class="map-callout" hidden></div>
+      <div class="map-legend"><span>AREA</span><span><i class="chikuzen"></i>筑前海</span><span><i class="buzen"></i>豊前海</span><span><i class="ariake"></i>有明海</span></div>
+    </section>
+    <aside class="details" id="details" aria-live="polite">
+      <div class="empty"><span class="eyebrow">SPOT DETAILS</span><h2>漁港を選んで<br>海の情報をチェック。</h2><p>地図のマーカーまたは一覧から<br>気になる漁港を選んでください。</p></div>
+    </aside>
+  </main>
+</body>
+</html>
